@@ -29,7 +29,7 @@ What if you find that you are not in the correct working directory? You can chan
 
 The second way is to use the `setwd()` function. You will need to provide the full path to the folder you want to use. For example:
 ```{r}
-#setwd("/Users/yourname/Documents/yourfolder") #uncomment and change to your path
+#setwd("~/Users/yourname/Documents/yourfolder") #uncomment and change to your path
 ```
 
 What is a path? A path is the location of a file or folder on your computer. It tells R where to find files to read in or where to save files you create. Paths can be absolute or relative. An absolute path provides the full location of a file or folder, starting from the root directory. A relative path provides the location of a file or folder in relation to the current working directory.
