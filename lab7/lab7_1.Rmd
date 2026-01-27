@@ -139,10 +139,6 @@ msleep %>%
   summarize(total=n())
 ```
 
-```{r}
-
-```
-
 `pull()` is another useful verb that extracts a single column from a data frame as a vector.
 ```{r}
 msleep %>% 
