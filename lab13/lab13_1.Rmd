@@ -177,17 +177,26 @@ Some key information:
 
 1. Import the data and do a little exploration. Be sure to clean the names if necessary.
 ```{r message=FALSE, warning=FALSE}
+cites <- read_csv("data/cites.csv") %>% 
+  clean_names()
+```
 
+```{r}
+glimpse(cites)
 ```
 
 2. Use `naniar` to summarize the NA's in each variable.
 ```{r}
-
+miss_var_summary(cites)
 ```
 
 3. Try using `group_by()` with `naniar`. Look specifically at `class` and `exporter_reported_quantity`. For which taxonomic classes do we have the highest number of missing export data?
 ```{r}
-
+cites %>% 
+  select(class, exporter_reported_quantity) %>% 
+  group_by(class) %>% 
+  miss_var_summary() %>% 
+  arrange(desc(n_miss))
 ```
 
 -->[Home](https://jmledford3115.github.io/datascibiol/)
